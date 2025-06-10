@@ -1,13 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Syoei Tezawa - 機械学習 研究ポートフォリオ</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content="Syoei Tezawa Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://yaakitori.github.io/portfolio_site/my_icon.png"
+    />
+    <meta
+      property="og:url"
+      content="https://yaakitori.github.io/portfolio_site/"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Chosen Palette: Intellectual Sophistication and Profundity (Dark Navy Blue, Soft Off-White, Gold Accent) -->
     <!-- Application Structure Plan: The portfolio site is structured thematically: Hero, About Me, Skills, Research Projects (case studies), Publications/Activities, and Contact, reflecting the user's journey as a machine learning researcher. The design emphasizes intellectual depth and clarity, using a dark theme and minimalist layout to highlight content. This version removes the Deploy Tool section. Key interactions include smooth scrolling and clear navigation. -->
     <!-- Visualization & Content Choices:
@@ -19,337 +34,584 @@
         - Contact: Clear contact methods. Goal: Facilitate connection. Method: HTML/Tailwind.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <style>
-        body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            background-color: #0A192F; /* Dark Navy Blue */
-            color: #E6E6E6; /* Soft Off-White */
-        }
-        h1, h2, h3, .nav-link, .hero-name {
-            font-family: 'Noto Serif JP', serif;
-        }
-        .accent-gold { color: #FFD700; }
-        .bg-accent-gold { background-color: #FFD700; }
-        .border-accent-gold { border-color: #FFD700; }
-        .nav-link.active { color: #FFD700; border-bottom: 2px solid #FFD700; }
-        .section-title {
-            border-bottom: 2px solid #FFD700;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-        .card {
-            background-color: #1E293B; /* Slightly lighter dark blue/slate */
-            border: 1px solid #334155; /* Slate border */
-        }
-        /* Removed flowchart-step styles as the tool is removed */
-        .loader { border: 4px solid #334155; border-top: 4px solid #FFD700; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; margin: 5px auto; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    </style>
-</head>
-<body class="antialiased">
-
-    <header id="header" class="bg-opacity-80 backdrop-blur-md sticky top-0 z-50 transition-shadow duration-300 shadow-none">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <a href="#hero" class="text-2xl font-bold hero-name">Syoei Tezawa</a>
-                </div>
-                <nav class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-6">
-                        <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400">自己紹介</a>
-                        <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400">スキル</a>
-                        <a href="#research" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400">研究実績</a>
-                        <a href="#publications" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400">論文/活動</a>
-                        <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400">連絡先</a>
-                    </div>
-                </nav>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:text-amber-400 focus:outline-none">
-                        <span class="text-2xl">☰</span>
-                    </button>
-                </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Syoei Tezawa",
+        "url": "https://yaakitori.github.io/portfolio_site/",
+        "image": "https://yaakitori.github.io/portfolio_site/my_icon.png",
+        "sameAs": [
+          "https://github.com/yaakitori",
+          "https://x.com/megima777",
+          "https://qiita.com/yakitoriii"
+        ]
+      }
+    </script>
+  </head>
+  <body class="antialiased font-sans bg-[#0A192F] text-[#E6E6E6]">
+    <header
+      id="header"
+      class="bg-opacity-80 backdrop-blur-md sticky top-0 z-50 transition-shadow duration-300 shadow-none"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div class="flex-shrink-0">
+            <a href="#hero" class="text-2xl font-bold font-serif"
+              >Syoei Tezawa</a
+            >
+          </div>
+          <nav class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-6">
+              <a
+                href="#about"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400"
+                >自己紹介</a
+              >
+              <a
+                href="#skills"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400"
+                >スキル</a
+              >
+              <a
+                href="#research"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400"
+                >研究実績</a
+              >
+              <a
+                href="#publications"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400"
+                >論文/活動</a
+              >
+              <a
+                href="#contact"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-amber-400"
+                >連絡先</a
+              >
             </div>
+          </nav>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="inline-flex items-center justify-center p-2 rounded-md hover:text-amber-400 focus:outline-none"
+            >
+              <span class="text-2xl">☰</span>
+            </button>
+          </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400">自己紹介</a>
-                <a href="#skills" class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400">スキル</a>
-                <a href="#research" class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400">研究実績</a>
-                <a href="#publications" class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400">論文/活動</a>
-                <a href="#contact" class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400">連絡先</a>
-            </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#about"
+            class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400"
+            >自己紹介</a
+          >
+          <a
+            href="#skills"
+            class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400"
+            >スキル</a
+          >
+          <a
+            href="#research"
+            class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400"
+            >研究実績</a
+          >
+          <a
+            href="#publications"
+            class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400"
+            >論文/活動</a
+          >
+          <a
+            href="#contact"
+            class="block nav-link px-3 py-2 rounded-md text-base font-medium hover:text-amber-400"
+            >連絡先</a
+          >
         </div>
+      </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center justify-center text-center px-4">
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="min-h-screen flex items-center justify-center text-center px-4"
+      >
+        <div>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+            Syoei Tezawa
+          </h1>
+          <p class="mt-4 text-xl md:text-2xl text-slate-300 font-serif">
+            GNNとXAIの融合を研究する大学院生
+          </p>
+          <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400">
+            「なぜ」を解き明かすAIへ：グラフ構造データと説明可能AIの最前線を研究しています。
+          </p>
+          <div class="mt-10">
+            <a
+              href="#research"
+              class="bg-amber-400 text-slate-900 font-semibold py-3 px-8 rounded-md shadow-lg hover:bg-amber-300 transition-transform transform hover:scale-105 text-lg"
+            >
+              研究実績を見る
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section id="about" class="py-20 md:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="inline-block border-b-2 border-amber-400 pb-2 text-3xl md:text-4xl font-bold mb-12 text-center text-amber-400"
+          >
+            自己紹介
+          </h2>
+          <div class="grid md:grid-cols-5 gap-12 items-center">
+            <div class="md:col-span-2">
+              <!-- ここにあなたの写真やアバターを配置 -->
+              <div
+                class="bg-slate-700 rounded-lg shadow-xl aspect-square flex items-center justify-center"
+              >
+                <img
+                  loading="lazy"
+                  src="my_icon.png"
+                  alt="あなたの写真"
+                  class="rounded-lg object-cover w-full h-full"
+                />
+              </div>
+            </div>
+            <div
+              class="md:col-span-3 text-slate-300 text-lg leading-relaxed space-y-4"
+            >
+              <p>
+                茨城大学大学院 機械システム工学専攻
+                知的ソフトウェア第一研究室。GNN（グラフニューラルネットワーク）とXAI（説明可能AI）の融合という魅力的な分野に情熱を注いでいます。
+                AIが複雑な意思決定を行う際、その「なぜ」を人間が理解できるようにすることは、技術の信頼性と社会実装を加速させる上で不可欠だと考えています。
+              </p>
+              <p>
+                特に、グラフ構造データにおける予測根拠の不明瞭さに課題を感じ、XAI技術をGNNに応用することで、より透明性の高いAIモデルの開発を目指しています。
+                日々の研究活動では、理論の探求だけでなく、PyTorchを用いた実践的なモデル構築と検証にも力を入れています。
+              </p>
+              <p>
+                将来的には、医療診断や金融不正検知など、高度な判断が求められる領域で、説明可能かつ公正なAIシステムを社会に実装することを目指しています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 md:py-32 bg-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="inline-block border-b-2 border-amber-400 pb-2 text-3xl md:text-4xl font-bold mb-16 text-center text-amber-400"
+          >
+            スキルセット
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+              class="bg-slate-800 border border-slate-600 p-6 rounded-lg shadow-xl"
+            >
+              <h3 class="text-xl font-semibold mb-3 text-amber-400">
+                プログラミング言語
+              </h3>
+              <ul class="list-disc list-inside text-slate-300 space-y-1">
+                <li>Python</li>
+              </ul>
+            </div>
+            <div
+              class="bg-slate-800 border border-slate-600 p-6 rounded-lg shadow-xl"
+            >
+              <h3 class="text-xl font-semibold mb-3 text-amber-400">
+                ライブラリ/フレームワーク
+              </h3>
+              <ul class="list-disc list-inside text-slate-300 space-y-1">
+                <li>PyTorch</li>
+                <li>PyTorch Geometric</li>
+                <li>scikit-learn</li>
+              </ul>
+            </div>
+            <div
+              class="bg-slate-800 border border-slate-600 p-6 rounded-lg shadow-xl"
+            >
+              <h3 class="text-xl font-semibold mb-3 text-amber-400">
+                AI/ML 関連知識
+              </h3>
+              <ul class="list-disc list-inside text-slate-300 space-y-1">
+                <li>グラフニューラルネットワーク (GNN)</li>
+                <li>説明可能AI (XAI)</li>
+                <li>機械学習/深層学習全般</li>
+                <li>自然言語処理</li>
+              </ul>
+            </div>
+            <div
+              class="bg-slate-800 border border-slate-600 p-6 rounded-lg shadow-xl"
+            >
+              <h3 class="text-xl font-semibold mb-3 text-amber-400">
+                ツール/その他
+              </h3>
+              <ul class="list-disc list-inside text-slate-300 space-y-1">
+                <li>Git / GitHub</li>
+                <li>Docker</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Projects Section -->
+      <section id="research" class="py-20 md:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="inline-block border-b-2 border-amber-400 pb-2 text-3xl md:text-4xl font-bold mb-16 text-center text-amber-400"
+          >
+            研究実績 / プロジェクト
+          </h2>
+          <div class="space-y-16">
+            <!-- Project 1 (Template) -->
+            <article
+              class="bg-slate-800 border border-slate-600 p-6 md:p-8 rounded-lg shadow-2xl"
+            >
+              <h3 class="text-2xl md:text-3xl font-bold mb-4 text-amber-400">
+                [プロジェクト名1 / 研究テーマ1]
+              </h3>
+              <div class="mb-6">
+                <img
+                  loading="lazy"
+                  src="https://placehold.co/800x400/1E293B/E6E6E6?text=プロジェクト画像1"
+                  alt="プロジェクト画像1"
+                  class="rounded-md shadow-md w-full h-auto object-cover"
+                />
+              </div>
+              <div class="text-slate-300 space-y-4 leading-relaxed">
+                <p>
+                  <strong class="text-slate-100">概要:</strong>
+                  [プロジェクトの目的、解決しようとした課題、研究テーマの重要性を簡潔に説明]
+                </p>
+                <p>
+                  <strong class="text-slate-100">背景と動機:</strong>
+                  [なぜこのテーマを選んだのか、何が課題だったのか、どんな疑問から始まったのかを具体的に記述]
+                </p>
+                <p>
+                  <strong class="text-slate-100">アプローチ:</strong>
+                  [どのようにGNNとXAIを融合させたのか、具体的な手法、使用したデータセット、実装上の工夫（PyTorchでの実装の詳細など）。図やグラフ、モデル構造のイメージなどへの言及も可]
+                </p>
+                <p>
+                  <strong class="text-slate-100">結果と考察:</strong>
+                  [得られた成果（定量的な評価指標、定性的な分析）、研究の意義、新規性。予想通りだった点、予想外だった点など、研究過程のリアルさを加えると良い]
+                </p>
+                <p>
+                  <strong class="text-slate-100">私の貢献:</strong>
+                  [プロジェクトにおけるあなたの役割、特に貢献した部分]
+                </p>
+                <p>
+                  <strong class="text-slate-100">学び:</strong>
+                  [この研究を通じて技術的に、あるいは研究者として何を学んだのか。困難だった点と、それをどのように乗り越えたのか]
+                </p>
+                <div class="mt-6">
+                  <h4 class="text-lg font-semibold mb-2 text-slate-100">
+                    関連アウトプット:
+                  </h4>
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>
+                      <a href="#" class="hover:text-amber-400 underline"
+                        >[関連論文タイトル1 (リンク)]</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="hover:text-amber-400 underline"
+                        >[学会発表スライド (リンク)]</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="hover:text-amber-400 underline"
+                        >[GitHubリポジトリ (リンク)]</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+            <!-- Add more projects following the same structure -->
+            <article
+              class="bg-slate-800 border border-slate-600 p-6 md:p-8 rounded-lg shadow-2xl"
+            >
+              <h3 class="text-2xl md:text-3xl font-bold mb-4 text-amber-400">
+                [プロジェクト名2 / 研究テーマ2]
+              </h3>
+              <div class="mb-6">
+                <img
+                  loading="lazy"
+                  src="https://placehold.co/800x400/1E293B/E6E6E6?text=プロジェクト画像2"
+                  alt="プロジェクト画像2"
+                  class="rounded-md shadow-md w-full h-auto object-cover"
+                />
+              </div>
+              <div class="text-slate-300 space-y-4 leading-relaxed">
+                <p>（上記と同様の構成で記述）</p>
+                <div class="mt-6">
+                  <h4 class="text-lg font-semibold mb-2 text-slate-100">
+                    関連アウトプット:
+                  </h4>
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>
+                      <a href="#" class="hover:text-amber-400 underline"
+                        >[関連論文等へのリンク]</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications & Activities Section -->
+      <section id="publications" class="py-20 md:py-32 bg-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="inline-block border-b-2 border-amber-400 pb-2 text-3xl md:text-4xl font-bold mb-12 text-center text-amber-400"
+          >
+            論文 / 活動
+          </h2>
+          <div class="grid md:grid-cols-2 gap-12">
             <div>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-                    Syoei Tezawa
-                </h1>
-                <p class="mt-4 text-xl md:text-2xl text-slate-300 hero-name">
-                    GNNとXAIの融合を研究する大学院生
-                </p>
-                <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400">
-                    「なぜ」を解き明かすAIへ：グラフ構造データと説明可能AIの最前線を研究しています。
-                </p>
-                <div class="mt-10">
-                    <a href="#research" class="bg-accent-gold text-slate-900 font-semibold py-3 px-8 rounded-md shadow-lg hover:bg-amber-300 transition-transform transform hover:scale-105 text-lg">
-                        研究実績を見る
-                    </a>
-                </div>
+              <h3 class="text-2xl font-semibold mb-6 text-slate-100">
+                学術論文
+              </h3>
+              <ul class="space-y-4 text-slate-300">
+                <li>
+                  <strong class="text-slate-100">[論文タイトル1]</strong><br />
+                  [著者名], [ジャーナル名/会議名], [発行年/巻号ページ].
+                  <a href="#" class="text-amber-400 hover:underline"
+                    >[DOI/リンク]</a
+                  >
+                </li>
+                <li>
+                  <strong class="text-slate-100"
+                    >[論文タイトル2 (プレプリントなど)]</strong
+                  ><br />
+                  [著者名], arXiv:[プレプリント番号], [年].
+                  <a href="#" class="text-amber-400 hover:underline"
+                    >[arXivリンク]</a
+                  >
+                </li>
+                <!-- Add more publications -->
+              </ul>
             </div>
-        </section>
+            <div>
+              <h3 class="text-2xl font-semibold mb-6 text-slate-100">
+                学会発表・その他活動
+              </h3>
+              <ul class="space-y-4 text-slate-300">
+                <li>
+                  <strong class="text-slate-100">[発表タイトル1]</strong><br />
+                  [学会名/イベント名], [開催地], [発表日].
+                  <a href="#" class="text-amber-400 hover:underline"
+                    >[スライド/ポスターへのリンク]</a
+                  >
+                </li>
+                <li>
+                  <strong class="text-slate-100">[受賞歴や奨学金など]</strong
+                  ><br />
+                  [詳細], [受賞/採択年月].
+                </li>
+                <li>
+                  <strong class="text-slate-100"
+                    >[ブログ記事タイトルなど]</strong
+                  ><br />
+                  [プラットフォーム名], [公開日].
+                  <a href="#" class="text-amber-400 hover:underline"
+                    >[記事へのリンク]</a
+                  >
+                </li>
+                <!-- Add more activities -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="py-20 md:py-32">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center accent-gold">自己紹介</h2>
-                <div class="grid md:grid-cols-5 gap-12 items-center">
-                    <div class="md:col-span-2">
-                        <!-- ここにあなたの写真やアバターを配置 -->
-                        <div class="bg-slate-700 rounded-lg shadow-xl aspect-square flex items-center justify-center">
-                            <img src="my_icon.png" alt="あなたの写真" class="rounded-lg object-cover w-full h-full">
-                        </div>
-                    </div>
-                    <div class="md:col-span-3 text-slate-300 text-lg leading-relaxed space-y-4">
-                        <p>
-                            茨城大学大学院 機械システム工学専攻 知的ソフトウェア第一研究室。GNN（グラフニューラルネットワーク）とXAI（説明可能AI）の融合という魅力的な分野に情熱を注いでいます。
-                            AIが複雑な意思決定を行う際、その「なぜ」を人間が理解できるようにすることは、技術の信頼性と社会実装を加速させる上で不可欠だと考えています。
-                        </p>
-                        <p>
-                            特に、グラフ構造データにおける予測根拠の不明瞭さに課題を感じ、XAI技術をGNNに応用することで、より透明性の高いAIモデルの開発を目指しています。
-                            日々の研究活動では、理論の探求だけでなく、PyTorchを用いた実践的なモデル構築と検証にも力を入れています。
-                        </p>
-                        <p>
-                            将来的には、医療診断や金融不正検知など、高度な判断が求められる領域で、説明可能かつ公正なAIシステムを社会に実装することを目指しています。
-                        </p>
-                    </div>
-                </div>
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 md:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2
+            class="inline-block border-b-2 border-amber-400 pb-2 text-3xl md:text-4xl font-bold mb-8 text-amber-400"
+          >
+            連絡先
+          </h2>
+          <p class="text-lg text-slate-300 mb-8 max-w-xl mx-auto">
+            共同研究のご相談、技術的なディスカッション、その他お問い合わせは、お気軽に下記メールアドレスまでご連絡ください。
+          </p>
+          <a
+            href="mailto:your-email@example.com"
+            class="inline-block bg-amber-400 text-slate-900 font-semibold py-3 px-8 rounded-md shadow-lg hover:bg-amber-300 transition-transform transform hover:scale-105 text-lg"
+          >
+            kennkyuu.ai88@gmail.com
+          </a>
+          <div class="mt-12">
+            <p class="text-slate-400 mb-2">
+              または、以下のSNSでも活動しています:
+            </p>
+            <div class="flex justify-center space-x-6">
+              <a
+                href="https://github.com/yaakitori"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-slate-300 hover:text-amber-400 text-2xl"
+                >GitHub</a
+              >
+              <a
+                href="https://x.com/megima777"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-slate-300 hover:text-amber-400 text-2xl"
+                >Twitter/X</a
+              >
+              <a
+                href="https://qiita.com/yakitoriii"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-slate-300 hover:text-amber-400 text-2xl"
+                >Qiita</a
+              >
             </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 md:py-32 bg-slate-800">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center accent-gold">スキルセット</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="card p-6 rounded-lg shadow-xl">
-                        <h3 class="text-xl font-semibold mb-3 accent-gold">プログラミング言語</h3>
-                        <ul class="list-disc list-inside text-slate-300 space-y-1">
-                            <li>Python </li>
-                        </ul>
-                    </div>
-                    <div class="card p-6 rounded-lg shadow-xl">
-                        <h3 class="text-xl font-semibold mb-3 accent-gold">ライブラリ/フレームワーク</h3>
-                        <ul class="list-disc list-inside text-slate-300 space-y-1">
-                            <li>PyTorch</li>
-                            <li>PyTorch Geometric</li>
-                            <li>scikit-learn</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6 rounded-lg shadow-xl">
-                        <h3 class="text-xl font-semibold mb-3 accent-gold">AI/ML 関連知識</h3>
-                        <ul class="list-disc list-inside text-slate-300 space-y-1">
-                            <li>グラフニューラルネットワーク (GNN)</li>
-                            <li>説明可能AI (XAI)</li>
-                            <li>機械学習/深層学習全般</li>
-                            <li>自然言語処理</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6 rounded-lg shadow-xl">
-                        <h3 class="text-xl font-semibold mb-3 accent-gold">ツール/その他</h3>
-                        <ul class="list-disc list-inside text-slate-300 space-y-1">
-                            <li>Git / GitHub</li>
-                            <li>Docker</li>
-                        </ul>
-                    </div>
-                </div>
+          </div>
+          <form
+            name="contact"
+            netlify
+            class="mt-12 max-w-xl mx-auto text-left space-y-4"
+          >
+            <div>
+              <label class="block mb-1" for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full p-2 rounded bg-slate-700 text-white"
+                required
+              />
             </div>
-        </section>
-
-        <!-- Research Projects Section -->
-        <section id="research" class="py-20 md:py-32">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center accent-gold">研究実績 / プロジェクト</h2>
-                <div class="space-y-16">
-                    <!-- Project 1 (Template) -->
-                    <article class="card p-6 md:p-8 rounded-lg shadow-2xl">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4 accent-gold">[プロジェクト名1 / 研究テーマ1]</h3>
-                        <div class="mb-6">
-                            <img src="https://placehold.co/800x400/1E293B/E6E6E6?text=プロジェクト画像1" alt="プロジェクト画像1" class="rounded-md shadow-md w-full h-auto object-cover">
-                        </div>
-                        <div class="text-slate-300 space-y-4 leading-relaxed">
-                            <p><strong class="text-slate-100">概要:</strong> [プロジェクトの目的、解決しようとした課題、研究テーマの重要性を簡潔に説明]</p>
-                            <p><strong class="text-slate-100">背景と動機:</strong> [なぜこのテーマを選んだのか、何が課題だったのか、どんな疑問から始まったのかを具体的に記述]</p>
-                            <p><strong class="text-slate-100">アプローチ:</strong> [どのようにGNNとXAIを融合させたのか、具体的な手法、使用したデータセット、実装上の工夫（PyTorchでの実装の詳細など）。図やグラフ、モデル構造のイメージなどへの言及も可]</p>
-                            <p><strong class="text-slate-100">結果と考察:</strong> [得られた成果（定量的な評価指標、定性的な分析）、研究の意義、新規性。予想通りだった点、予想外だった点など、研究過程のリアルさを加えると良い]</p>
-                            <p><strong class="text-slate-100">私の貢献:</strong> [プロジェクトにおけるあなたの役割、特に貢献した部分]</p>
-                            <p><strong class="text-slate-100">学び:</strong> [この研究を通じて技術的に、あるいは研究者として何を学んだのか。困難だった点と、それをどのように乗り越えたのか]</p>
-                            <div class="mt-6">
-                                <h4 class="text-lg font-semibold mb-2 text-slate-100">関連アウトプット:</h4>
-                                <ul class="list-disc list-inside space-y-1">
-                                    <li><a href="#" class="hover:text-amber-400 underline">[関連論文タイトル1 (リンク)]</a></li>
-                                    <li><a href="#" class="hover:text-amber-400 underline">[学会発表スライド (リンク)]</a></li>
-                                    <li><a href="#" class="hover:text-amber-400 underline">[GitHubリポジトリ (リンク)]</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- Add more projects following the same structure -->
-                     <article class="card p-6 md:p-8 rounded-lg shadow-2xl">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4 accent-gold">[プロジェクト名2 / 研究テーマ2]</h3>
-                         <div class="mb-6">
-                            <img src="https://placehold.co/800x400/1E293B/E6E6E6?text=プロジェクト画像2" alt="プロジェクト画像2" class="rounded-md shadow-md w-full h-auto object-cover">
-                        </div>
-                        <div class="text-slate-300 space-y-4 leading-relaxed">
-                            <p>（上記と同様の構成で記述）</p>
-                             <div class="mt-6">
-                                <h4 class="text-lg font-semibold mb-2 text-slate-100">関連アウトプット:</h4>
-                                <ul class="list-disc list-inside space-y-1">
-                                    <li><a href="#" class="hover:text-amber-400 underline">[関連論文等へのリンク]</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <div>
+              <label class="block mb-1" for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full p-2 rounded bg-slate-700 text-white"
+                required
+              />
             </div>
-        </section>
-
-        <!-- Publications & Activities Section -->
-        <section id="publications" class="py-20 md:py-32 bg-slate-800">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center accent-gold">論文 / 活動</h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-6 text-slate-100">学術論文</h3>
-                        <ul class="space-y-4 text-slate-300">
-                            <li>
-                                <strong class="text-slate-100">[論文タイトル1]</strong><br>
-                                [著者名], [ジャーナル名/会議名], [発行年/巻号ページ]. <a href="#" class="accent-gold hover:underline">[DOI/リンク]</a>
-                            </li>
-                            <li>
-                                <strong class="text-slate-100">[論文タイトル2 (プレプリントなど)]</strong><br>
-                                [著者名], arXiv:[プレプリント番号], [年]. <a href="#" class="accent-gold hover:underline">[arXivリンク]</a>
-                            </li>
-                            <!-- Add more publications -->
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-6 text-slate-100">学会発表・その他活動</h3>
-                        <ul class="space-y-4 text-slate-300">
-                            <li>
-                                <strong class="text-slate-100">[発表タイトル1]</strong><br>
-                                [学会名/イベント名], [開催地], [発表日]. <a href="#" class="accent-gold hover:underline">[スライド/ポスターへのリンク]</a>
-                            </li>
-                            <li>
-                                <strong class="text-slate-100">[受賞歴や奨学金など]</strong><br>
-                                [詳細], [受賞/採択年月].
-                            </li>
-                             <li>
-                                <strong class="text-slate-100">[ブログ記事タイトルなど]</strong><br>
-                                [プラットフォーム名], [公開日]. <a href="#" class="accent-gold hover:underline">[記事へのリンク]</a>
-                            </li>
-                            <!-- Add more activities -->
-                        </ul>
-                    </div>
-                </div>
+            <div>
+              <label class="block mb-1" for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full p-2 rounded bg-slate-700 text-white"
+                required
+              ></textarea>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-32">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="section-title text-3xl md:text-4xl font-bold mb-8 accent-gold">連絡先</h2>
-                <p class="text-lg text-slate-300 mb-8 max-w-xl mx-auto">
-                    共同研究のご相談、技術的なディスカッション、その他お問い合わせは、お気軽に下記メールアドレスまでご連絡ください。
-                </p>
-                <a href="mailto:your-email@example.com" class="inline-block bg-accent-gold text-slate-900 font-semibold py-3 px-8 rounded-md shadow-lg hover:bg-amber-300 transition-transform transform hover:scale-105 text-lg">
-                    kennkyuu.ai88@gmail.com
-                </a>
-                <div class="mt-12">
-                    <p class="text-slate-400 mb-2">または、以下のSNSでも活動しています:</p>
-                    <div class="flex justify-center space-x-6">
-                        <a href="https://github.com/yaakitori" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-amber-400 text-2xl">GitHub</a>
-                        <a href="https://x.com/megima777" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-amber-400 text-2xl">Twitter/X</a>
-                        <a href="https://qiita.com/yakitoriii" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-amber-400 text-2xl">Qiita</a>
-                    </div>
-                </div>
-                 <!-- <div class="mt-16"> -->
-                    <!-- <a href="[あなたのCVのPDFファイルへのパス]" target="_blank" class="text-amber-400 hover:underline">最新のCVはこちら (PDF)</a> -->
-                </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-amber-400 text-slate-900 font-semibold py-2 px-6 rounded hover:bg-amber-300"
+              >
+                Send
+              </button>
             </div>
-        </section>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer class="py-12 border-t border-slate-700 bg-slate-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400">
-            <p>&copy; <span id="currentYear"></span> Syoei Tezawa. All Rights Reserved.</p>
-            <p class="text-sm mt-2">このポートフォリオはTailwind CSSを用いて構築されています。</p>
-        </div>
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400"
+      >
+        <p>
+          &copy; <span id="currentYear"></span> Syoei Tezawa. All Rights
+          Reserved.
+        </p>
+        <p class="text-sm mt-2">
+          このポートフォリオはTailwind CSSを用いて構築されています。
+        </p>
+      </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-
-            // Smooth scroll and active link highlighting
-            const navLinks = document.querySelectorAll('header .nav-link'); // Select only header nav links
-            const sections = document.querySelectorAll('main section');
-
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - (document.getElementById('header').offsetHeight + 20) ) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    const href = link.getAttribute('href');
-                    if (href && href.includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
-                 // Sticky header shadow
-                const header = document.getElementById('header');
-                if (window.pageYOffset > 50) {
-                    header.classList.add('shadow-lg', 'bg-slate-900'); // Apply a darker bg for contrast
-                    header.classList.remove('shadow-none');
-                } else {
-                    header.classList.remove('shadow-lg', 'bg-slate-900');
-                    header.classList.add('shadow-none');
-                }
-            });
-
-            // Set current year in footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-            // // Placeholder for About Me photo - replace with actual image logic if needed
-            // const photoPlaceholder = document.querySelector('#about .bg-slate-700.aspect-square');
-            // if (photoPlaceholder && photoPlaceholder.querySelector('span')) {
-            //     //  Example: You can replace the span with an img tag dynamically if you load the image URL via JS
-            //      const img = document.createElement('img');
-            //      img.src = 'my_icon.png';
-            //      img.alt = 'あなたの写真';
-            //      img.className = 'rounded-lg object-cover w-full h-full';
-            //      photoPlaceholder.innerHTML = ''; // Clear the placeholder text/span
-            //      photoPlaceholder.appendChild(img);
-            // }
+      document.addEventListener("DOMContentLoaded", () => {
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
         });
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+
+        // Smooth scroll and active link highlighting
+        const navLinks = document.querySelectorAll("header .nav-link"); // Select only header nav links
+        const sections = document.querySelectorAll("main section");
+
+        window.addEventListener("scroll", () => {
+          let current = "";
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (
+              pageYOffset >=
+              sectionTop - (document.getElementById("header").offsetHeight + 20)
+            ) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLinks.forEach((link) => {
+            link.classList.remove(
+              "text-amber-400",
+              "border-b-2",
+              "border-amber-400",
+            );
+            const href = link.getAttribute("href");
+            if (href && href.includes(current)) {
+              link.classList.add(
+                "text-amber-400",
+                "border-b-2",
+                "border-amber-400",
+              );
+            }
+          });
+          // Sticky header shadow
+          const header = document.getElementById("header");
+          if (window.pageYOffset > 50) {
+            header.classList.add("shadow-lg", "bg-slate-900"); // Apply a darker bg for contrast
+            header.classList.remove("shadow-none");
+          } else {
+            header.classList.remove("shadow-lg", "bg-slate-900");
+            header.classList.add("shadow-none");
+          }
+        });
+
+        // Set current year in footer
+        document.getElementById("currentYear").textContent =
+          new Date().getFullYear();
+
+        // // Placeholder for About Me photo - replace with actual image logic if needed
+        // const photoPlaceholder = document.querySelector('#about .bg-slate-700.aspect-square');
+        // if (photoPlaceholder && photoPlaceholder.querySelector('span')) {
+        //     //  Example: You can replace the span with an img tag dynamically if you load the image URL via JS
+        //      const img = document.createElement('img');
+        //      img.src = 'my_icon.png';
+        //      img.alt = 'あなたの写真';
+        //      img.className = 'rounded-lg object-cover w-full h-full';
+        //      photoPlaceholder.innerHTML = ''; // Clear the placeholder text/span
+        //      photoPlaceholder.appendChild(img);
+        // }
+      });
     </script>
-</body>
+  </body>
 </html>
